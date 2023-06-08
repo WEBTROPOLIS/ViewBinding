@@ -9,6 +9,10 @@ import android.provider.ContactsContract;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.OvershootInterpolator;
+import android.view.animation.ScaleAnimation;
+import android.widget.Toast;
 
 import com.example.myapplication.databinding.ActivityMainBinding;
 
@@ -20,6 +24,85 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         Intent profileIntent = new Intent(MainActivity.this, profile.class);
 
+        binding.imgUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Crear la animación de escala
+                Animation animation = new ScaleAnimation(
+                        1f, 0.8f, // Escala de inicio y fin en el eje X
+                        1f, 0.8f, // Escala de inicio y fin en el eje Y
+                        Animation.RELATIVE_TO_SELF, 0.5f, // Punto de pivote de la escala en el eje X
+                        Animation.RELATIVE_TO_SELF, 0.5f // Punto de pivote de la escala en el eje Y
+                );
+                animation.setDuration(200); // Duración de la animación en milisegundos
+                animation.setInterpolator(new OvershootInterpolator()); // Interpolador de la animación
+
+                // Aplicar la animación al ImageView
+                binding.imgUser.startAnimation(animation);
+
+                Toast.makeText(MainActivity.this,"Click en Imagen de Usuario",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        binding.imgLogo3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Crear la animación de escala
+                Animation animation = new ScaleAnimation(
+                        1f, 0.8f, // Escala de inicio y fin en el eje X
+                        1f, 0.8f, // Escala de inicio y fin en el eje Y
+                        Animation.RELATIVE_TO_SELF, 0.5f, // Punto de pivote de la escala en el eje X
+                        Animation.RELATIVE_TO_SELF, 0.5f // Punto de pivote de la escala en el eje Y
+                );
+                animation.setDuration(200); // Duración de la animación en milisegundos
+                animation.setInterpolator(new OvershootInterpolator()); // Interpolador de la animación
+
+                // Aplicar la animación al ImageView
+                binding.imgLogo3.startAnimation(animation);
+
+                Toast.makeText(MainActivity.this,"Click en LOGO 3",Toast.LENGTH_SHORT).show();
+            }
+        });
+        binding.imgLogo2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Crear la animación de escala
+                Animation animation = new ScaleAnimation(
+                        1f, 0.8f, // Escala de inicio y fin en el eje X
+                        1f, 0.8f, // Escala de inicio y fin en el eje Y
+                        Animation.RELATIVE_TO_SELF, 0.5f, // Punto de pivote de la escala en el eje X
+                        Animation.RELATIVE_TO_SELF, 0.5f // Punto de pivote de la escala en el eje Y
+                );
+                animation.setDuration(200); // Duración de la animación en milisegundos
+                animation.setInterpolator(new OvershootInterpolator()); // Interpolador de la animación
+
+                // Aplicar la animación al ImageView
+                binding.imgLogo2.startAnimation(animation);
+
+                Toast.makeText(MainActivity.this,"Click en LOGO 2",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        binding.imgLogo1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Crear la animación de escala
+                Animation animation = new ScaleAnimation(
+                        1f, 0.8f, // Escala de inicio y fin en el eje X
+                        1f, 0.8f, // Escala de inicio y fin en el eje Y
+                        Animation.RELATIVE_TO_SELF, 0.5f, // Punto de pivote de la escala en el eje X
+                        Animation.RELATIVE_TO_SELF, 0.5f // Punto de pivote de la escala en el eje Y
+                );
+                animation.setDuration(200); // Duración de la animación en milisegundos
+                animation.setInterpolator(new OvershootInterpolator()); // Interpolador de la animación
+
+                // Aplicar la animación al ImageView
+                binding.imgLogo1.startAnimation(animation);
+
+                Toast.makeText(MainActivity.this,"Click en LOGO 1",Toast.LENGTH_SHORT).show();
+            }
+        });
         binding.btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
