@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (!isValidPhone(phoneNum)){
-                    binding.divPhone.setError("Número de telefono incorrecto (10 y 13 caracteres)");
+                    binding.divPhone.setError("Número de telefono incorrecto (9 y 11 caracteres)");
                     flagValidaDatos=false;
                 }
 
@@ -213,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isValidPhone(String phoneNumber) {
-        String phonePattern = "^[+]?[0-9]{10,13}$";
+        String phonePattern = "^[+]?[0-9]{9,11}$";
         return phoneNumber.matches(phonePattern);
     }
 }
